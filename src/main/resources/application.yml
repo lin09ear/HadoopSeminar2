@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://[source ip]:3306/wordpress?useSSL=false
+    username: wordpress
+    password: wordpress
+    driver-class-name: com.mysql.cj.jdbc.Driver
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Send logs to Hadoop Impala</title>
+</head>
+<body>
+
+<button id="createActivityLogDBBtn">Create Activity Log DB</button>
+<button id="sendActivityLogsBtn">Send Activity Logs</button>
+<button id="sendAccessLogsBtn">Send Access Logs</button>
+
+<script>
+   var button = document.getElementById("createActivityLogDBBtn");
+
+    button.addEventListener("click", function() {
+        // AJAX 요청 보내기
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/create-activitylog-db", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log("서버 응답 성공:", xhr.responseText);
+                    alert(xhr.responseText);
+                } else {
+                    console.error("서버 응답 실패. 상태 코드:", xhr.status);
+                    alert(xhr.status);
+                }
+            }
+        };
+        xhr.send();
+    });
+
+    </script>
+
+<script>
+   var button = document.getElementById("sendAccessLogsBtn");
+
+    button.addEventListener("click", function() {
+        // AJAX 요청 보내기
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/send-accesslogs", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log("서버 응답 성공:", xhr.responseText);
+                    alert(xhr.responseText);
+                } else {
+                    console.error("서버 응답 실패. 상태 코드:", xhr.status);
+                    alert(xhr.status);
+                }
+            }
+        };
+        xhr.send();
+    });
+
+    </script>
+
+<script>
+    var button = document.getElementById("sendActivityLogsBtn");
+
+    button.addEventListener("click", function() {
+        // AJAX 요청 보내기
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/send-activitylogs", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log("서버 응답 성공:", xhr.responseText);
+                    alert(xhr.responseText);
+                } else {
+                    console.error("서버 응답 실패. 상태 코드:", xhr.status);
+                     alert(xhr.status);
+                }
+            }
+        };
+        xhr.send();
+    });
+</script>
+
+</body>
+</html>
